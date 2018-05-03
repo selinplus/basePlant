@@ -2,12 +2,10 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
   <context id="context1">
-    <jdbcConnection connectionURL="???" driverClass="???" password="???" userId="???" />
-    <javaModelGenerator targetPackage="???" targetProject="???" />
-    <sqlMapGenerator targetPackage="???" targetProject="???" />
-    <javaClientGenerator targetPackage="???" targetProject="???" type="XMLMAPPER" />
-    <table schema="???" tableName="???">
-      <columnOverride column="???" property="???" />
+    <jdbcConnection connectionURL="jdbc:mysql://localhost/vehicle?useSSL=false" driverClass="com.mysql.jdbc.Driver" password="good88luck" userId="root" />
+    <javaModelGenerator targetPackage="com.interstore.basePlant.domain" targetProject="basePlant" />
+    <sqlMapGenerator targetPackage="com.interstore.basePlant.mapper" targetProject="basePlant" />
+    <table schema="vehicle" tableName="customer">
     </table>
   </context>
 </generatorConfiguration>
