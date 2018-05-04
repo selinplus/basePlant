@@ -28,7 +28,7 @@ public class BasePlantApplication {
 	@Autowired
 	public void authenticationManager(AuthenticationManagerBuilder builder, UserMapper repository, UserService userService) throws Exception {
 		if (repository.count()==0)
-			userService.save(new User("admin", "adminPassword", Arrays.asList(new Role("USER","USER"), new Role("ACTUATOR","ACTUATOR") , new Role("ADMIN","ADMIN"))));
+			userService.save(new User("admin", "adminPassword", Arrays.asList(new Role("USER","USER"), new Role("LOGIN","LOGIN") , new Role("ADMIN","ADMIN"))));
 		builder.userDetailsService(userDetailsService(repository)).passwordEncoder(passwordEncoder);
 	}
 	/**
