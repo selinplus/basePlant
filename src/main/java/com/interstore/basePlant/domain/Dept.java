@@ -19,5 +19,5 @@ public class Dept {
 	
 	private Date modifyDate;
 	
-	private String parent;
+	private String parentId;
 }

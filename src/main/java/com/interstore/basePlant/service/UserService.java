@@ -17,8 +17,9 @@ public class UserService {
 
 	@Autowired
 	private UserMapper userMapper;
+
 	@Autowired
-	private UserMapper roleMapper;
+	private RoleService roleService;
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
@@ -27,10 +28,11 @@ public class UserService {
 	public User findByUsername(String username) {
 		return userMapper.findByUsername(username);
 	}
-	public void save(User u) {
+	public int save(User u) {
 		u.setPassword(passwordEncoder().encode(u.getPassword()));
 		userMapper.save(u);
 		List<Role> listRole = u.getRoles();
-		roleMapper.saveRoles(u.getRoles());
+		int cnt = Math.toIntExact(roleService.saveRoles(listRole));
+		return cnt;
 	}
 }
